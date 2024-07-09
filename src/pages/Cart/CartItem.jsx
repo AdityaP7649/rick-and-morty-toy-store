@@ -5,9 +5,13 @@ import "./CartItem.scss";
 
 function CartItem({ item }) {
   const { addToCart, removeFromCart } = useCartContext();
+
+  //Function to add items in cart
   const addToItemCart = () => {
     addToCart(item.id, item, 1);
   };
+
+  //Function to remove items from the cart
   const reduceFromItemCart = () => {
     if (item.quantity <= 1) {
       removeFromCart(item.id);
